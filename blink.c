@@ -7,15 +7,17 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+// #define MASK 0b00100000
+
 int main(void){
 
-    DDRD |= (1<<DD7);
+    DDRB |= (1<<DDB5);
 
     while(1){
-        PORTD |= (1<<PD7);
-        _delay_ms(500);
-        PORTD &= ~(1<<PD7);
+        PORTB |= (1<<PB5);
         _delay_ms(1000);
-
+        PORTB &= ~(1<<PB5);
+        _delay_ms(1000);
     }
+
 }
